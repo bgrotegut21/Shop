@@ -1,12 +1,12 @@
 .nav {
-  height: 150px;
+  height: 120px;
 
   background: red;
 }
 
 .nav-container {
   background: yellow;
-  height: 100px;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -15,7 +15,7 @@
 .search-bar {
   background: white;
   border: 1px solid rgb(204, 204, 204);
-  height: 60px;
+  height: 50px;
   border-radius: 60px;
   width: 800px;
 
@@ -38,10 +38,9 @@
 }
 
 .search-button {
-  filter: invert(21%) sepia(10%) saturate(19%) hue-rotate(314deg)
-    brightness(103%) contrast(90%);
-  width: 50px;
-  height: 50px;
+  filter: brightness(30%);
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   border: 0;
 
@@ -50,10 +49,16 @@
   background-position: center;
   background-repeat: no-repeat;
   background-color: rgba(0, 0, 0, 0);
+  /* background-color: red; */
 
   cursor: pointer;
 }
 
 .price-plaza-title {
+  margin-left: 5px;
   background: white;
+}
+
+.nav-icons {
+  display: flex;
 }

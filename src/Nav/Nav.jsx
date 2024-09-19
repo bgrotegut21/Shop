@@ -1,4 +1,6 @@
 import './nav.css';
+import FavoriteButton from '../FavoriteButton/FavoriteButton.jsx';
+import ShoppingButton from '../ShoppingButton/ShoppingButton.jsx';
 
 const Nav = () => {
   return (
@@ -11,7 +13,8 @@ const Nav = () => {
           <button className='search-button'></button>
         </div>
         <div className='nav-icons'>
- 
+          <FavoriteButton />
+          <ShoppingButton />
         </div>
       </div>
       <div className='nav-container2'>
