@@ -1,0 +1,59 @@
+.nav {
+  height: 150px;
+
+  background: red;
+}
+
+.nav-container {
+  background: yellow;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.search-bar {
+  background: white;
+  border: 1px solid rgb(204, 204, 204);
+  height: 60px;
+  border-radius: 60px;
+  width: 800px;
+
+  display: flex;
+  align-items: center;
+}
+
+.search-box {
+  background: rgba(0, 0, 0, 0);
+  border: 0;
+  height: 100%;
+  width: 750px;
+  margin-left: 15px;
+
+  font-size: medium;
+}
+
+.search-box:focus {
+  outline: none;
+}
+
+.search-button {
+  filter: invert(21%) sepia(10%) saturate(19%) hue-rotate(314deg)
+    brightness(103%) contrast(90%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 0;
+
+  background-image: url('../assets/searchbar.svg');
+  background-size: 30px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: rgba(0, 0, 0, 0);
+
+  cursor: pointer;
+}
+
+.price-plaza-title {
+  background: white;
+}
