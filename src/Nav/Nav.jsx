@@ -6,15 +6,19 @@ const Nav = () => {
   return (
     <div className='nav'>
       <div className='nav-container'>
-        <h1 className='price-plaza-title'>PRICE SLASH PLAZA 101</h1>
-        <div className='search-bar'>
-          <input className='search-box' placeholder='Search for anything' />
+        <div className='nav-subcontainer'>
+          <button className='price-plaza-button'>
+            <h1 className='price-plaza-title'>PRICE SLASH PLAZA 101</h1>
+          </button>
+          <div className='search-bar'>
+            <input className='search-box' placeholder='Search for anything' />
 
-          <button className='search-button'></button>
-        </div>
-        <div className='nav-icons'>
-          <FavoriteButton />
-          <ShoppingButton />
+            <button className='search-button'></button>
+          </div>
+          <div className='nav-icons'>
+            <FavoriteButton />
+            <ShoppingButton />
+          </div>
         </div>
       </div>
       <div className='nav-container2'>

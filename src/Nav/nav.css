@@ -1,26 +1,55 @@
 .nav {
-  height: 120px;
-
-  background: red;
+  height: 130px;
 }
 
 .nav-container {
-  background: yellow;
-  height: 80px;
   display: flex;
-  align-items: center;
+  justify-content: center;
+  height: 90px;
+  border-bottom: 1px solid rgb(204, 204, 204);
+}
+
+.nav-subcontainer {
+  display: flex;
   justify-content: space-between;
+  align-items: center;
+  width: 2000px;
 }
 
 .search-bar {
   background: white;
-  border: 1px solid rgb(204, 204, 204);
+  border: 1px solid black;
   height: 50px;
   border-radius: 60px;
   width: 800px;
 
   display: flex;
   align-items: center;
+}
+
+.nav-container2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-list {
+  display: flex;
+  width: 2000px;
+  height: 40px;
+  justify-content: space-around;
+  align-items: center;
+  list-style-type: none;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: black;
+}
+
+.nav-link:hover {
+  color: blue;
+  text-decoration: underline;
 }
 
 .search-box {
@@ -51,6 +80,11 @@
   background-color: rgba(0, 0, 0, 0);
   /* background-color: red; */
 
+  cursor: pointer;
+}
+
+.price-plaza-button {
+  border: 0;
   cursor: pointer;
 }
 
