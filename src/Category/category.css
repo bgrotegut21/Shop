@@ -1,0 +1,51 @@
+.category-button {
+  background: rgb(255, 255, 255);
+  width: 200px;
+  height: 200px;
+  border-radius: 30px;
+  border: 2px solid rgb(204, 204, 204);
+}
+
+.category-image {
+  width: 55%;
+}
+
+.category-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.category-link {
+  margin: 5px;
+  text-decoration: none;
+  font-size: large;
+  color: black;
+}
+
+.category-link:hover {
+  text-decoration: underline;
+  color: blue;
+}
+
+.category-button {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 800px) {
+  .category-button {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .category-button {
+    width: 100px;
+    height: 100px;
+  }
+
+  .category-link {
+    font-size: small;
+  }
+}

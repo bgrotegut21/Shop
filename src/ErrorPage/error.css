@@ -1,0 +1,53 @@
+.error-code {
+  font-size: 64px;
+}
+
+.error-description {
+  font-size: x-large;
+}
+
+.error-button {
+  font-size: large;
+  border: 0;
+  height: 3em;
+  padding-right: 100px;
+  padding-left: 100px;
+  border-radius: 3em;
+  font-weight: bold;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.error-button:hover {
+  background-color: rgb(211, 8, 8);
+}
+
+.error-page {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 160px);
+  align-items: center;
+  justify-content: center;
+}
+
+.error-page-container {
+  text-align: center;
+}
+
+/*  210px is the height of the mobile nav*/
+
+@media screen and (max-width: 850px) {
+  .error-page {
+    height: calc(100vh - 210px);
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .error-button {
+    padding-right: 50px;
+    padding-left: 50px;
+  }
+}

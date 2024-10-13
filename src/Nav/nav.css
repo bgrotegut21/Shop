@@ -16,17 +16,6 @@
   width: 2000px;
 }
 
-.search-bar {
-  background: white;
-  border: 1px solid black;
-  height: 50px;
-  border-radius: 60px;
-  width: 800px;
-
-  display: flex;
-  align-items: center;
-}
-
 .nav-container2 {
   display: flex;
   justify-content: center;
@@ -52,37 +41,6 @@
   text-decoration: underline;
 }
 
-.search-box {
-  background: rgba(0, 0, 0, 0);
-  border: 0;
-  height: 100%;
-  width: 750px;
-  margin-left: 15px;
-
-  font-size: medium;
-}
-
-.search-box:focus {
-  outline: none;
-}
-
-.search-button {
-  filter: brightness(30%);
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: 0;
-
-  background-image: url('../assets/searchbar.svg');
-  background-size: 30px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: rgba(0, 0, 0, 0);
-  /* background-color: red; */
-
-  cursor: pointer;
-}
-
 .price-plaza-button {
   border: 0;
   cursor: pointer;
@@ -95,4 +53,59 @@
 
 .nav-icons {
   display: flex;
+}
+
+@media screen and (max-width: 2000px) {
+  .nav-subcontainer {
+    width: 1500px;
+  }
+
+  .nav-list {
+    width: 1500px;
+  }
+}
+
+@media screen and (max-width: 1500px) {
+  .nav-subcontainer {
+    width: 1000px;
+  }
+
+  .nav-list {
+    width: 1000px;
+  }
+
+  .search-bar {
+    width: 500px;
+  }
+
+  .search-button {
+    width: 60px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .nav-list {
+    width: 1000px;
+  }
+  .nav-subcontainer {
+    width: 1000px;
+  }
+
+  .search-bar {
+    width: 300px;
+  }
+
+  .price-plaza-title {
+    font-size: large;
+  }
+
+  .search-button {
+    width: 120px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .nav-subcontainer {
+    max-width: 1000px;
+  }
 }

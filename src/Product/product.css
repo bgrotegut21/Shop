@@ -1,0 +1,13 @@
+.product {
+  width: 200px;
+  height: 400px;
+  border-bottom: 1px solid rgb(204, 204, 204);
+}
+
+.product-price {
+  font-size: x-large;
+}
+
+.product-description {
+  font-size: large;
+}

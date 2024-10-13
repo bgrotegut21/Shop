@@ -1,24 +1,24 @@
 import './nav.css';
-import FavoriteButton from '../FavoriteButton/FavoriteButton.jsx';
-import ShoppingButton from '../ShoppingButton/ShoppingButton.jsx';
+
+import NavIcons from '../NavIcons/NavIcons.jsx';
+import SearchBar from '../SearchBar/SearchBar.jsx';
+
+const PricePlazaTitleButton = () => {
+  return (
+    <button className='price-plaza-button'>
+      <h1 className='price-plaza-title'>PRICE SLASH PLAZA 101</h1>
+    </button>
+  );
+};
 
 const Nav = () => {
   return (
     <div className='nav'>
       <div className='nav-container'>
         <div className='nav-subcontainer'>
-          <button className='price-plaza-button'>
-            <h1 className='price-plaza-title'>PRICE SLASH PLAZA 101</h1>
-          </button>
-          <div className='search-bar'>
-            <input className='search-box' placeholder='Search for anything' />
-
-            <button className='search-button'></button>
-          </div>
-          <div className='nav-icons'>
-            <FavoriteButton />
-            <ShoppingButton />
-          </div>
+          <PricePlazaTitleButton />
+          <SearchBar />
+          <NavIcons />
         </div>
       </div>
       <div className='nav-container2'>
