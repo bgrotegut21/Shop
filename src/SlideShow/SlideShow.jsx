@@ -131,11 +131,16 @@ const slidesArray = [
 const SlideShow = () => {
   return (
     <>
-      <div className='slide-show'>
+      <div
+        className='slide-show'
+        style={{
+          background: 'rgb(218, 221, 216)',
+        }}
+      >
         <Arrow isRight={true} />
 
         <div className='slide-content'>
-          <Slide
+          {/* <Slide
             title='Save 50%'
             buttonText='Save Big Today!'
             image={ssdImage}
@@ -143,6 +148,18 @@ const SlideShow = () => {
             secondaryColor='#9DFFF9'
           >
             when you buy your first SSD!
+          </Slide> */}
+
+          <Slide
+            title='Free Diamond Ring!'
+            buttonText='Buy Now!'
+            primaryColor='#DADDD8'
+            secondaryColor='#001427'
+            isSwitched={true}
+            image={diamondRing}
+          >
+            We will get you a free diamond ring when you buy your first one
+            today!
           </Slide>
 
           <div className='dots-container'>

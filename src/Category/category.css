@@ -21,6 +21,7 @@
   text-decoration: none;
   font-size: large;
   color: black;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .category-link:hover {

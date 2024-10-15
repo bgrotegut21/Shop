@@ -1,6 +1,5 @@
 .slide-show {
   height: 300px;
-  background: #4f759b;
   display: flex;
   flex-direction: row;
   border-radius: 30px;
@@ -92,6 +91,8 @@
 }
 
 .slide-title {
+  font-family: Arial, Helvetica, sans-serif;
+
   font-size: xx-large;
 }
 
@@ -99,6 +100,7 @@
   margin-top: 10px;
   font-size: large;
   margin-bottom: 10px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .slide-button {
@@ -107,6 +109,8 @@
   height: 3em;
   padding-right: 30px;
   padding-left: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+
   border-radius: 3em;
   font-weight: bold;
   cursor: pointer;

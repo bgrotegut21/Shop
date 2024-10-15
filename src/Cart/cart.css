@@ -6,6 +6,7 @@
 
 .cart-title {
   text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 /* CHECKOUT BUTTON */
@@ -59,11 +60,13 @@
 .cart-item-description {
   font-size: large;
   text-wrap: wrap;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .cart-item-remove {
   color: blue;
   font-size: medium;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .cart-item-info {
@@ -78,11 +81,13 @@
 
 .cart-stats {
   text-wrap: wrap;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .cart-item-price {
   font-size: large;
   text-wrap: wrap;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 /* MEDIA QUERIES */

@@ -17,13 +17,14 @@ import MobileMenu from '../MobileMenu/MobileMenu.jsx';
 const App = () => {
   return (
     <div className='app'>
-      <MobileMenu />
-      <MobileNav />
-      {/* <Nav /> */}
+      {/* <MobileMenu /> */}
+      {/* <Modal /> */}
+      {/* <MobileNav /> */}
+      <Nav />
 
       <div className='main'>
         <div className='content'>
-          <ErrorPage />
+          <Home />
         </div>
       </div>
     </div>

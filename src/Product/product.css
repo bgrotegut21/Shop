@@ -5,9 +5,11 @@
 }
 
 .product-price {
+  font-family: Arial, Helvetica, sans-serif;
   font-size: x-large;
 }
 
 .product-description {
+  font-family: Arial, Helvetica, sans-serif;
   font-size: large;
 }

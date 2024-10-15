@@ -1,35 +1,36 @@
-import './mobilemenu.css';
+import './menu.css';
 
 const MobileMenu = () => {
   return (
-    <div className='mobile-menu'>
-      <div className='mobile-menu-info'>
-        <h2>menu</h2>
-        <button className='mobile-menu-exit'>X</button>
-      </div>
-      <div className='mobile-menu-container'>
-        <ul className='mobile-menu-list'>
-          <li key='a'>
-            <a className='mobile-menu-link' href='#'>
-              Home
-            </a>
-          </li>
-          <li key='b'>
-            <a className='mobile-menu-link' href='#'>
-              {"Men's Clothing"}
-            </a>
-          </li>
-          <li key='c'>
-            <a className='mobile-menu-link' href='#'>
-              {"Woman's Clothing"}
-            </a>
-          </li>
-          <li key='d'>
-            <a className='mobile-menu-link' href='#'>
-              Electronics
-            </a>
-          </li>
-        </ul>
+    <div className='mobile-menu-overlay'>
+      <div className='mobile-menu'>
+        <div className='mobile-menu-info'>
+          <button className='mobile-menu-exit-button'>X</button>
+        </div>
+        <div className='mobile-menu-container'>
+          <ul className='mobile-menu-list'>
+            <li className='mobile-menu-item' key='a'>
+              <button className='mobile-menu-button' href='#'>
+                Home
+              </button>
+            </li>
+            <li className='mobile-menu-item' key='b'>
+              <button className='mobile-menu-button' href='#'>
+                {"Men's Clothing"}
+              </button>
+            </li>
+            <li className='mobile-menu-item' key='c'>
+              <button className='mobile-menu-button' href='#'>
+                {"Woman's Clothing"}
+              </button>
+            </li>
+            <li className='mobile-menu-item' key='d'>
+              <button className='mobile-menu-button' href='#'>
+                Electronics
+              </button>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   );

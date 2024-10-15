@@ -1,0 +1,78 @@
+.mobile-menu-overlay {
+  position: absolute;
+  background: hsla(0, 0%, 0%, 0.6);
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.mobile-menu-title {
+  margin-left: 10px;
+  font-weight: lighter;
+}
+
+.mobile-menu {
+  background: white;
+  width: 500px;
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.mobile-menu-info {
+  display: flex;
+  float: right;
+}
+
+.mobile-menu-exit-button {
+  border: 0;
+  background: white;
+  font-size: xx-large;
+  width: 1em;
+  cursor: pointer;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.mobile-menu-button {
+  font-size: x-large;
+  text-decoration: none;
+  border: 0;
+  background: white;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+
+  color: black;
+  cursor: pointer;
+
+  padding: 10px;
+}
+
+.mobile-menu-button:hover {
+  background: rgb(221, 219, 219);
+}
+
+@media screen and (max-width: 600px) {
+  .mobile-menu {
+    width: 400px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .mobile-menu {
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .mobile-menu {
+    width: 250px;
+  }
+
+  .mobile-menu-button {
+    font-size: x-large;
+  }
+
+  .mobile-menu-exit-button {
+    font-size: x-large;
+  }
+}

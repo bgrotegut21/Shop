@@ -4,15 +4,18 @@
 
 .product-display-title {
   margin: 10px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .product-display-description {
   margin: 10px;
   font-size: large;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .product-display-price {
   margin: 10px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .product-display-container {
