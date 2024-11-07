@@ -1,15 +1,29 @@
 import './nav.css';
 
+import { categories } from '../categories.js';
+
 import NavIcons from '../NavIcons/NavIcons.jsx';
 import SearchBar from '../SearchBar/SearchBar.jsx';
 
+import { Link } from 'react-router-dom';
+
 const PricePlazaTitleButton = () => {
   return (
-    <button className='price-plaza-button'>
-      <h1 className='price-plaza-title'>PRICE SLASH PLAZA 101</h1>
-    </button>
+    <Link to='/'>
+      <button className='price-plaza-button'>
+        <h1 className='price-plaza-title'>PRICE SLASH PLAZA 101</h1>
+      </button>
+    </Link>
   );
 };
+
+{
+  /* <li key='1'>
+<a className='nav-link' href='#'>
+  Home
+</a>
+</li> */
+}
 
 const Nav = () => {
   return (
@@ -23,26 +37,13 @@ const Nav = () => {
       </div>
       <div className='nav-container2'>
         <ul className='nav-list'>
-          <li key='1'>
-            <a className='nav-link' href='#'>
-              Home
-            </a>
-          </li>
-          <li key='2'>
-            <a className='nav-link' href='#'>
-              {"Men's Clothing"}
-            </a>
-          </li>
-          <li key='3'>
-            <a className='nav-link' href='#'>
-              {"Woman's Clothing"}
-            </a>
-          </li>
-          <li key='4'>
-            <a className='nav-link' href='#'>
-              Electronics
-            </a>
-          </li>
+          {categories.map((category) => (
+            <li key={category.id}>
+              <Link className='nav-link' to={category.param}>
+                {category.title}
+              </Link>
+            </li>
+          ))}
         </ul>
       </div>
     </div>

@@ -3,13 +3,13 @@ import './product.css';
 import AddButton from '../AddButton/AddButton.jsx';
 import ProductSquare from '../ProductSquare/ProductSquare.jsx';
 
-const Product = ({ price, description, src, alt }) => {
+const Product = ({ price, title, src }) => {
   return (
     <div className='product'>
-      <ProductSquare src={src} alt={alt} />
+      <ProductSquare src={src} alt={title} />
       <AddButton />
-      <h2 className='product-price'>{price}</h2>
-      <p className='product-description'>{description}</p>
+      <h2 className='product-price'>${price}</h2>
+      <p className='product-description'>{title}</p>
     </div>
   );
 };

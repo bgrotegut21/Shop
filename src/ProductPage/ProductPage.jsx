@@ -2,8 +2,17 @@ import '../styles/globalStyles.css';
 import './productsPage.css';
 
 import ssdImage from '../assets/ssd.png';
-
 import Product from '../Product/Product.jsx';
+
+import {
+  getStoreItemsArrayByIdsArray,
+  getStoreItemById,
+  getStoreItemsByCategory,
+  getAllStoreItems,
+} from '../store/storeapi.js';
+
+import { useLoaderData, Await } from 'react-router-dom';
+import { useEffect, useState, Suspense } from 'react';
 
 const LoadingProduct = () => {
   return <div className='product-loading loading-animation'></div>;
@@ -15,40 +24,49 @@ const LoadingProductPage = () => {
       <div className='product-page-result-loading loading-animation'></div>
 
       <div className='products-container'>
-        <LoadingProduct />
-        <LoadingProduct />
-        <LoadingProduct />
-        <LoadingProduct />
+        <LoadingProduct key='loading-product-1' />
+        <LoadingProduct key='loading-product-2' />
+        <LoadingProduct key='loading-product-3' />
+        <LoadingProduct key='loading-product-4' />
       </div>
     </div>
   );
 };
 
+{
+  /* <Product
+key={data.id}
+price={data.price}
+title={data.title}
+src={data.image}
+/> */
+}
+
 const ProductPage = () => {
+  const loaderData = useLoaderData();
+
   return (
-    <div className='products-page'>
-      <h1 className='products-page-results'>{'1 Result for  "ssd" '}</h1>
-      <div className='products-container'>
-        <Product
-          price='$339.99'
-          description='Sandisk SSD'
-          src={ssdImage}
-          alt='solid state drive'
-        />
-        <Product
-          price='$339.99'
-          description='Sandisk SSD'
-          src={ssdImage}
-          alt='solid state drive'
-        />
-        <Product
-          price='$339.99'
-          description='Sandisk SSD'
-          src={ssdImage}
-          alt='solid state drive'
-        />
-      </div>
-    </div>
+    <Suspense fallback={<LoadingProductPage />}>
+      <Await resolve={loaderData.products}>
+        {(products) => (
+          <div className='products-page'>
+            <h1 className='products-page-results'>
+              {products.length === 0 ? 'No Results' : products[0].category}
+            </h1>
+            <div className='products-container'>
+              {products.map((data) => (
+                <Product
+                  key={data.id}
+                  price={data.price}
+                  title={data.title}
+                  src={data.image}
+                />
+              ))}
+            </div>
+          </div>
+        )}
+      </Await>
+    </Suspense>
   );
 };
 

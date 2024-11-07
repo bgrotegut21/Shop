@@ -11,6 +11,8 @@
 
 .app {
   position: relative;
+  /* background: blue; */
+  height: 100%;
 }
 
 @media screen and (max-width: 2000px) {

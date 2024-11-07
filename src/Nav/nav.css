@@ -108,8 +108,8 @@
   }
 }
 
-@media screen and (max-width: 700px) {
-  .nav-subcontainer {
-    max-width: 1000px;
+@media screen and (max-width: 850px) {
+  .nav {
+    display: none;
   }
 }

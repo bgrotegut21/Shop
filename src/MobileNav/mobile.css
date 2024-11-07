@@ -1,6 +1,6 @@
 .mobile-nav {
   height: 180px;
-  display: flex;
+  display: none;
   align-items: center;
   flex-direction: column;
   border-bottom: 1px solid rgb(204, 204, 204);
@@ -45,6 +45,9 @@
 }
 
 @media screen and (max-width: 850px) {
+  .mobile-nav {
+    display: flex;
+  }
   .mobile-nav-subcontainer {
     width: 100%;
   }

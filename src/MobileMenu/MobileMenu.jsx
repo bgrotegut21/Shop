@@ -1,34 +1,37 @@
 import './menu.css';
 
-const MobileMenu = () => {
+import { useNavigate } from 'react-router-dom';
+import { categories } from '../categories';
+
+const MobileMenu = ({ onToggle }) => {
+  const navigate = useNavigate();
+
   return (
     <div className='mobile-menu-overlay'>
       <div className='mobile-menu'>
         <div className='mobile-menu-info'>
-          <button className='mobile-menu-exit-button'>X</button>
+          <button
+            className='mobile-menu-exit-button'
+            onClick={() => onToggle(false)}
+          >
+            X
+          </button>
         </div>
         <div className='mobile-menu-container'>
           <ul className='mobile-menu-list'>
-            <li className='mobile-menu-item' key='a'>
-              <button className='mobile-menu-button' href='#'>
-                Home
-              </button>
-            </li>
-            <li className='mobile-menu-item' key='b'>
-              <button className='mobile-menu-button' href='#'>
-                {"Men's Clothing"}
-              </button>
-            </li>
-            <li className='mobile-menu-item' key='c'>
-              <button className='mobile-menu-button' href='#'>
-                {"Woman's Clothing"}
-              </button>
-            </li>
-            <li className='mobile-menu-item' key='d'>
-              <button className='mobile-menu-button' href='#'>
-                Electronics
-              </button>
-            </li>
+            {categories.map((category) => (
+              <li className='mobile-menu-item' key={category.id}>
+                <button
+                  className='mobile-menu-button'
+                  onClick={() => {
+                    onToggle(false);
+                    navigate(category.param);
+                  }}
+                >
+                  {category.title}
+                </button>
+              </li>
+            ))}
           </ul>
         </div>
       </div>

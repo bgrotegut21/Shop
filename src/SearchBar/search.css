@@ -52,23 +52,31 @@
 }
 
 @media screen and (max-width: 1000px) {
-  .search-bar {
-    width: 300px;
-  }
-
-  .search-button {
-    width: 120px;
-  }
-}
-
-/* Naviation  switches to mobile so there is more room for the search bar */
-
-@media screen and (max-width: 1000px) {
   .search-button {
     width: 60px;
   }
   .search-bar {
     width: 500px;
+  }
+}
+
+/* Naviation  switches to mobile so there is more room for the search bar */
+
+@media screen and (max-width: 850px) {
+  .search-button {
+    width: 60px;
+  }
+  .search-bar {
+    width: 600px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .search-button {
+    width: 74px;
+  }
+  .search-bar {
+    width: 450px;
   }
 }
 

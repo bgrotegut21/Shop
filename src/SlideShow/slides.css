@@ -27,7 +27,7 @@
   cursor: pointer;
 }
 
-.arrow-button-right {
+.arrow-button-left {
   transform: scaleX(-1);
 }
 

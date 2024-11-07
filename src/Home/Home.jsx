@@ -1,12 +1,15 @@
 import './home.css';
 
-import mensShirtImage from '../assets/men-shirt.png';
-import womenShirtImage from '../assets/womenshirt.png';
-import dragonJewleryImage from '../assets/dragonjewlery.png';
-import ssdImage from '../assets/ssd.png';
+import { categories } from '../categories.js';
 
 import Category from '../Category/Category.jsx';
 import SlideShow from '../SlideShow/SlideShow.jsx';
+
+{
+  /* <Category src={mensShirtImage} alt='a shirt of a man'>
+{"Men's Clothing"}
+</Category> */
+}
 
 const Home = () => {
   return (
@@ -14,21 +17,19 @@ const Home = () => {
       <SlideShow />
 
       <div className='categories-container'>
-        <Category src={mensShirtImage} alt='a shirt of a man'>
-          {"Men's Clothing"}
-        </Category>
-
-        <Category src={womenShirtImage} alt='a shirt of a woman'>
-          {"Women's Clothing"}
-        </Category>
-
-        <Category src={dragonJewleryImage} alt='a dragon bracelet'>
-          Jewlery
-        </Category>
-
-        <Category src={ssdImage} alt='solid state drive'>
-          Electronics
-        </Category>
+        {categories.map(
+          (category) =>
+            category.title !== 'Home' && (
+              <Category
+                key={category.title}
+                src={category.src}
+                alt={category.alt}
+                to={category.param}
+              >
+                {category.title}
+              </Category>
+            )
+        )}
       </div>
     </div>
   );
