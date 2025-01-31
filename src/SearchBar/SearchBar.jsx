@@ -1,12 +1,17 @@
 import './search.css';
-import { Form } from 'react-router-dom';
+import { Form, useLoaderData } from 'react-router-dom';
 
 const SearchBar = () => {
+  const loaderData = useLoaderData();
+  console.log(loaderData, 'the loader data');
+
   return (
-    <Form role='search'>
+    <Form role='search' action='search'>
       <div className='search-bar'>
         <input
-          type='text'
+          type='search'
+          id='q'
+          name='q'
           className='search-box'
           placeholder='Search for anything'
         />

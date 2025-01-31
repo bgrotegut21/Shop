@@ -62,7 +62,7 @@ const ProductDisplay = () => {
                 {product.description}
               </p>
 
-              <h2 className='product-display-price'>{product.price}</h2>
+              <h2 className='product-display-price'>${product.price}</h2>
               <AddButton size='large' />
             </div>
           </div>

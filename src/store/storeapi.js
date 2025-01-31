@@ -11,13 +11,25 @@ const getStoreItemsByCategory = async (category) => {
       `https://fakestoreapi.com/products/category/${category}`
     );
 
-    const result = await response.json();
-    return result;
+    const items = await response.json();
+
+    // console.log(items, 'the current ');
+
+    return {
+      title: items[0].category,
+      items,
+    };
   }
 
-  const results = await getAllStoreItems();
+  const rawResults = await getAllStoreItems();
+  const items = rawResults.filter((item) => item.category === category);
 
-  return results.filter((item) => item.category === category);
+  if (items.length === 0) throw new Error('Category does not exist');
+
+  return {
+    title: items[0].category,
+    items,
+  };
 };
 
 const getStoreItemsArrayByIdsArray = async (arrayOfIds) => {
@@ -27,6 +39,24 @@ const getStoreItemsArrayByIdsArray = async (arrayOfIds) => {
     const item = results.find((resultObject) => resultObject.id === id);
     return item;
   });
+};
+
+const getStoreItemsByQuery = async (query) => {
+  const rawResults = await getAllStoreItems();
+
+  const results = rawResults.filter((item) => {
+    const lowerText = item.title.toLowerCase();
+    const lowerQuery = query.toLowerCase();
+
+    return lowerText.includes(lowerQuery);
+  });
+
+  const numberOfResults = results.length;
+
+  return {
+    title: `${numberOfResults} results for "${query}"`,
+    items: results,
+  };
 };
 
 const getStoreItemById = async (id) => {
@@ -40,4 +70,5 @@ export {
   getStoreItemById,
   getStoreItemsByCategory,
   getAllStoreItems,
+  getStoreItemsByQuery,
 };

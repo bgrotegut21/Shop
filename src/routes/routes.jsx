@@ -1,7 +1,9 @@
 import App from '../App/App.jsx';
+import { appLoader } from '../App/appActions.jsx';
 
 import ErrorPage from '../ErrorPage/ErrorPage.jsx';
 import Home from '../Home/Home.jsx';
+import SearchBar from '../SearchBar/SearchBar.jsx';
 
 import ProductPage from '../ProductPage/ProductPage.jsx';
 import { productPageLoader } from '../ProductPage/productPageActions.js';
@@ -15,6 +17,7 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
+    loader: appLoader,
     errorElement: <ErrorPage />,
 
     children: [

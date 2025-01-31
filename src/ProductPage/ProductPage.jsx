@@ -4,13 +4,6 @@ import './productsPage.css';
 import ssdImage from '../assets/ssd.png';
 import Product from '../Product/Product.jsx';
 
-import {
-  getStoreItemsArrayByIdsArray,
-  getStoreItemById,
-  getStoreItemsByCategory,
-  getAllStoreItems,
-} from '../store/storeapi.js';
-
 import { useLoaderData, Await } from 'react-router-dom';
 import { useEffect, useState, Suspense } from 'react';
 
@@ -50,11 +43,9 @@ const ProductPage = () => {
       <Await resolve={loaderData.products}>
         {(products) => (
           <div className='products-page'>
-            <h1 className='products-page-results'>
-              {products.length === 0 ? 'No Results' : products[0].category}
-            </h1>
+            <h1 className='products-page-results'>{products.title}</h1>
             <div className='products-container'>
-              {products.map((data) => (
+              {products.items.map((data) => (
                 <Product
                   key={data.id}
                   price={data.price}

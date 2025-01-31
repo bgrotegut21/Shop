@@ -20,6 +20,19 @@
   font-size: medium;
 }
 
+.search-box::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.search-box::-moz-search-cancel-button {
+  display: none;
+}
+
+.search-box::-ms-clear {
+  display: none;
+}
+
 .search-box:focus {
   outline: none;
 }

@@ -8,6 +8,12 @@ import MobileMenu from '../MobileMenu/MobileMenu.jsx';
 import { useState } from 'react';
 import { Outlet } from 'react-router-dom';
 
+const appLoader = ({ request }) => {
+  const url = new URL(request.url);
+  const q = url.searchParams.get('q');
+  console.log(q, 'the query');
+};
+
 const App = () => {
   const [toggleMobile, setToggleMobile] = useState(false);
   const [toggleModal, setToggleModal] = useState(false);
@@ -21,6 +27,8 @@ const App = () => {
       <MobileNav onToggle={handleToggleMobile} />
       <Nav />
 
+      
+
       <div className='main'>
         <div className='content'>
           <Outlet />
@@ -31,74 +39,3 @@ const App = () => {
 };
 
 export default App;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-≠ 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-≠
