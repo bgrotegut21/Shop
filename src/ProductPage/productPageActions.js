@@ -9,14 +9,19 @@ const testTimeout = (time) => {
   return new Promise((resolve) => setTimeout(resolve, time));
 };
 
-const testItemsByCategory = async (categoryNam, request) => {
+const testItemsByCategory = async (categoryName) => {
   await testTimeout(2000);
   const items = await getStoreItemsByCategory(categoryName);
   return items;
 };
 
+const testItemsByQuery = async (query) => {
+  await testTimeout(2000);
+  const items = getStoreItemsByQuery(query);
+  return items;
+};
+
 const productPageLoader = ({ params, request }) => {
-  console.log('page loading');
   const { categoryName } = params;
 
   const url = new URL(request.url);
@@ -24,9 +29,8 @@ const productPageLoader = ({ params, request }) => {
 
   const isQuery = query === null ? false : true;
 
-  // console.log(query, 'the query');
-
   if (isQuery) {
+    // console.log('is the query');
     return defer({ products: getStoreItemsByQuery(query) });
   }
 

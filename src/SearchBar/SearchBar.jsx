@@ -2,11 +2,8 @@ import './search.css';
 import { Form, useLoaderData } from 'react-router-dom';
 
 const SearchBar = () => {
-  const loaderData = useLoaderData();
-  console.log(loaderData, 'the loader data');
-
   return (
-    <Form role='search' action='search'>
+    <Form role='search' action='search' method='get'>
       <div className='search-bar'>
         <input
           type='search'
@@ -15,7 +12,7 @@ const SearchBar = () => {
           className='search-box'
           placeholder='Search for anything'
         />
-        <button className='search-button'></button>
+        <button type='submit' className='search-button'></button>
       </div>
     </Form>
   );

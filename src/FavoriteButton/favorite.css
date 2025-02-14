@@ -10,3 +10,7 @@
   background-size: 40px;
   filter: brightness(0);
 }
+
+.favorite-button-highlighted {
+  background-image: url('../assets/favorite_filled.svg');
+}

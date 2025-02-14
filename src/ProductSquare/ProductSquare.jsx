@@ -2,7 +2,14 @@ import './productsquare.css';
 
 import FavoriteButton from '../FavoriteButton/FavoriteButton.jsx';
 
-const ProductSquare = ({ src, alt, size }) => {
+const ProductSquare = ({
+  src,
+  alt,
+  size,
+  productId,
+  favState,
+  favDispatch,
+}) => {
   let sizeClass = '';
   let sizeContainerClass = '';
   let sizeFavContainer = '';
@@ -22,7 +29,11 @@ const ProductSquare = ({ src, alt, size }) => {
   return (
     <div className={`product-square ${sizeClass}`}>
       <div className={`product-square-favorite-container ${sizeFavContainer}`}>
-        <FavoriteButton />
+        <FavoriteButton
+          productId={productId}
+          favState={favState}
+          favDispatch={favDispatch}
+        />
       </div>
 
       <div className={`product-square-image-container ${sizeContainerClass}`}>

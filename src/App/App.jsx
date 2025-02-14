@@ -1,24 +1,26 @@
 import './app.css';
 
+import { itemsReducer } from './itemsReducer.jsx';
+import { favoritesReducer } from './favoritesReducer.jsx';
+
 import Nav from '../Nav/Nav.jsx';
 import MobileNav from '../MobileNav/MobileNav.jsx';
 import Modal from '../Modal/Modal.jsx';
 import MobileMenu from '../MobileMenu/MobileMenu.jsx';
 
-import { useState } from 'react';
+import { useState, useReducer } from 'react';
 import { Outlet } from 'react-router-dom';
-
-const appLoader = ({ request }) => {
-  const url = new URL(request.url);
-  const q = url.searchParams.get('q');
-  console.log(q, 'the query');
-};
 
 const App = () => {
   const [toggleMobile, setToggleMobile] = useState(false);
   const [toggleModal, setToggleModal] = useState(false);
 
+  const [favState, favDispatch] = useReducer(favoritesReducer, []);
+
   const handleToggleMobile = (toggleBool) => setToggleMobile(toggleBool);
+
+  console.log(favState, 'the fav state on app');
+  console.log(favDispatch, 'the fav dispatch');
 
   return (
     <div className='app'>
@@ -27,11 +29,9 @@ const App = () => {
       <MobileNav onToggle={handleToggleMobile} />
       <Nav />
 
-      
-
       <div className='main'>
         <div className='content'>
-          <Outlet />
+          <Outlet context={[favState, favDispatch]} />
         </div>
       </div>
     </div>

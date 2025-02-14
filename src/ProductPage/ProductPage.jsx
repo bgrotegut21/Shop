@@ -4,7 +4,12 @@ import './productsPage.css';
 import ssdImage from '../assets/ssd.png';
 import Product from '../Product/Product.jsx';
 
-import { useLoaderData, Await } from 'react-router-dom';
+import {
+  useLoaderData,
+  Await,
+  useNavigation,
+  useOutletContext,
+} from 'react-router-dom';
 import { useEffect, useState, Suspense } from 'react';
 
 const LoadingProduct = () => {
@@ -37,8 +42,17 @@ src={data.image}
 
 const ProductPage = () => {
   const loaderData = useLoaderData();
+  const navigation = useNavigation();
+  const [favState, favDispatch] = useOutletContext();
 
-  return (
+  console.log(favState, 'THE FAV STATE ON PRODUCT PAGE');
+
+  // console.log(loaderData, 'the loader data');
+  // console.log(navigation.state, 'the current navigation');
+
+  return navigation.state === 'loading' ? (
+    <LoadingProductPage />
+  ) : (
     <Suspense fallback={<LoadingProductPage />}>
       <Await resolve={loaderData.products}>
         {(products) => (
@@ -48,9 +62,12 @@ const ProductPage = () => {
               {products.items.map((data) => (
                 <Product
                   key={data.id}
+                  productId={data.id}
                   price={data.price}
                   title={data.title}
                   src={data.image}
+                  favState={favState}
+                  favDispatch={favDispatch}
                 />
               ))}
             </div>
